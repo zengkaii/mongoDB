@@ -36,4 +36,6 @@ var db = connect('company')
 // db.workmate.update({name:"xiaoWang"},{$addToSet:{interest:{$each:newInterset}}})
 //$pop
 // db.workmate.update({name:'xiaoWang'},{$pop:{interest:1}})
+//数组定位修改
+// db.workmate.update({name:'xiaoWang'},{$set:{"interest.2":"Code"}})
 print('[update]: The data was update successfully')
