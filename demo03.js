@@ -18,12 +18,22 @@ var db = connect('company')
 // ............................
 //$set
 // db.workmate.update({name:'MinJie'},{"$set":{sex:0,age:20}})
-
 //$inc
 // db.workmate.update({"name":"MinJie"},{$inc:{"age":-2}})
-//multi
+//$multi
 // db.workmate.update({},{$set:{interset:[]}},{multi:true})
-//upsert
-db.workmate.update({name:'xiaoWang'},{$set:{age:20}},{upsert:true})
-
+//$upsert
+// db.workmate.update({name:'xiaoWang'},{$set:{age:20}},{upsert:true})
+//$push
+// db.workmate.update({name:'xiaoWang'},{$push:{interest:'draw'}})
+// db.workmate.update({name:'MinJie'},{$push:{"skill.skillFour":'draw'}})
+//$ne
+// db.workmate.update({name:'xiaoWang',"interest":{$ne:'playGame'}},{$push:{interest:'Game'}})
+//$addToSet
+// db.workmate.update({name:"xiaoWang"},{$addToSet:{interest:"readBook"}})
+//$each
+// var newInterset=["Sing","Dance","Code"];
+// db.workmate.update({name:"xiaoWang"},{$addToSet:{interest:{$each:newInterset}}})
+//$pop
+// db.workmate.update({name:'xiaoWang'},{$pop:{interest:1}})
 print('[update]: The data was update successfully')
